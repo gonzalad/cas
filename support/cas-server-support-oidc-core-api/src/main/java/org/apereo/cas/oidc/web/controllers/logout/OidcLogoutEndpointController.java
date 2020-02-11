@@ -77,7 +77,7 @@ public class OidcLogoutEndpointController extends BaseOAuth20Controller {
             if (urls.isEmpty()) {
                 return getLogoutRedirectView(state, null);
             }
-            return getLogoutRedirectView(state, urls.toArray()[0].toString());
+            return getLogoutRedirectView(state, urls.iterator().next().getUrl());
         }
 
         return getLogoutRedirectView(state, null);
